@@ -48,4 +48,7 @@
 		</selectKey>
 		insert into `user` (`username`,`birthday`,`sex`,`address`) values (#{userName},#{birthday},#{sex},#{address})
 	</insert>
+	<update id="update" parameterType="user">
+		update `user` set username = #{userName} where `id` = #{id}
+	</update>
 </mapper>

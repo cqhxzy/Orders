@@ -49,4 +49,10 @@ public class UserMapperImpl implements UserMapper{
 		return null;
 	}
 
+	@Override
+	public int update(User user) {
+		
+		return 0;
+	}
+
 }
