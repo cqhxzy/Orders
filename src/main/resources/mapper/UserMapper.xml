@@ -48,7 +48,25 @@
 		</selectKey>
 		insert into `user` (`username`,`birthday`,`sex`,`address`) values (#{userName},#{birthday},#{sex},#{address})
 	</insert>
+	
+	<insert id="addBatch" parameterType="list">
+		insert into `user` (`username`,`birthday`,`sex`,`address`) values 
+		<foreach collection="list" separator="," item="item">
+			(#{item.userName},#{item.birthday},#{item.sex},#{item.address})
+		</foreach>
+	</insert>
+	
 	<update id="update" parameterType="user">
 		update `user` set username = #{userName} where `id` = #{id}
 	</update>
+	
+	<select id="selectAll" resultMap="findByIdResultMap">
+		select * from `user` order by `id` desc
+	</select>
+	
+	<select id="selectAll2" resultMap="findByIdResultMap" parameterType="String">
+		select * from `user` 
+		where `username` like '%${params}%'   <!-- 一定要注意模糊查询的语法 -->
+		order by `id` asc
+	</select>
 </mapper>

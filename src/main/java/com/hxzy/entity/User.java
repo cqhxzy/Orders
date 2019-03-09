@@ -49,5 +49,16 @@ public class User implements Serializable{
 		return "User [id=" + id + ", userName=" + userName + ", birthday=" + birthday + ", sex=" + sex + ", address="
 				+ address + "]";
 	}
+	public User(Integer id, String userName, Date birthday, String sex, String address) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.birthday = birthday;
+		this.sex = sex;
+		this.address = address;
+	}
+	public User() {
+		super();
+	}
 	
 }

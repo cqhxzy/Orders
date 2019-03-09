@@ -36,6 +36,11 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.4.6</version>
 		</dependency>
+		<dependency>
+	    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper</artifactId>
+		    <version>5.1.8</version>
+		</dependency>
 	</dependencies>
 	<!-- 告诉maven生成jar包的时候，要把 resources下面的所有的文件生成出来 -->
 	<build>
